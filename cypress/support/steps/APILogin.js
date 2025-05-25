@@ -23,7 +23,7 @@ Given('que eu não preenchi o email ou a senha', () => {
 
 When('eu envio uma requisição POST para {string} com o email e a senha', (endpoint) => {
   cy.get('@validLoginData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint,
       method: 'POST',
       body,
@@ -33,7 +33,7 @@ When('eu envio uma requisição POST para {string} com o email e a senha', (endp
 
 When('eu envio uma requisição POST para {string} com o email e a senha inválidos', (endpoint) => {
   cy.get('@invalidLoginData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint,
       method: 'POST',
       body,
@@ -43,7 +43,7 @@ When('eu envio uma requisição POST para {string} com o email e a senha inváli
 
 When('eu envio uma requisição POST para {string} sem preencher todos os campos', (endpoint) => {
   cy.get('@emptyLoginData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint,
       method: 'POST',
       body,

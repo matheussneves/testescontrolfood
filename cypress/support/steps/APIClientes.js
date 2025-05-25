@@ -18,7 +18,7 @@ Given('que eu tenho dados inválidos para o cliente', () => {
 
 When('eu envio uma requisição POST para {string} com os dados do cliente', (endpoint) => {
   cy.get('@validClientData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint,
       method: 'POST',
       body,
@@ -28,7 +28,7 @@ When('eu envio uma requisição POST para {string} com os dados do cliente', (en
 
 When('eu envio uma requisição POST para {string} com os dados inválidos', (endpoint) => {
   cy.get('@invalidClientData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint,
       method: 'POST',
       body,
@@ -37,14 +37,14 @@ When('eu envio uma requisição POST para {string} com os dados inválidos', (en
 });
 
 When('eu envio uma requisição GET para {string}', (endpoint) => {
-  cy.apiRequest({
+  cy.chamarApi({
     endpoint,
     method: 'GET',
   }).as('apiResponse');
 });
 
 When('eu envio uma requisição GET para {string} com o ID {int}', (endpoint, id) => {
-  cy.apiRequest({
+  cy.chamarApi({
     endpoint: `${endpoint}/${id}`,
     method: 'GET',
   }).as('apiResponse');
@@ -58,7 +58,7 @@ When('eu envio uma requisição PUT para {string} com o ID {int} e os dados atua
   }).as('updatedClientData');
 
   cy.get('@updatedClientData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint: `${endpoint}/${id}`,
       method: 'PUT',
       body,
@@ -67,7 +67,7 @@ When('eu envio uma requisição PUT para {string} com o ID {int} e os dados atua
 });
 
 When('eu envio uma requisição DELETE para {string} com o ID {int}', (endpoint, id) => {
-  cy.apiRequest({
+  cy.chamarApi({
     endpoint: `${endpoint}/${id}`,
     method: 'DELETE',
   }).as('apiResponse');
@@ -85,7 +85,7 @@ Then('eu devo ver a mensagem {string}', (message) => {
   });
 });
 
-Then('eu devo ver uma lista de clientes', () => {
+And('eu devo ver uma lista de clientes', () => {
   cy.get('@apiResponse').then((response) => {
     expect(response.status).to.eq(200);
     expect(response.body).to.be.an('array');

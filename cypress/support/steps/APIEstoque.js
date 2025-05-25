@@ -28,7 +28,7 @@ Given('que não existe um item no estoque com o ID {int}', (id) => {
 
 When('eu envio uma requisição POST para {string} com os dados do item', (endpoint) => {
   cy.get('@validStockItemData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint,
       method: 'POST',
       body,
@@ -38,7 +38,7 @@ When('eu envio uma requisição POST para {string} com os dados do item', (endpo
 
 When('eu envio uma requisição POST para {string} com os dados inválidos', (endpoint) => {
   cy.get('@invalidStockItemData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint,
       method: 'POST',
       body,
@@ -47,14 +47,14 @@ When('eu envio uma requisição POST para {string} com os dados inválidos', (en
 });
 
 When('eu envio uma requisição GET para {string}', (endpoint) => {
-  cy.apiRequest({
+  cy.chamarApi({
     endpoint,
     method: 'GET',
   }).as('apiResponse');
 });
 
 When('eu envio uma requisição GET para {string} com o ID {int}', (endpoint, id) => {
-  cy.apiRequest({
+  cy.chamarApi({
     endpoint: `${endpoint}/${id}`,
     method: 'GET',
   }).as('apiResponse');
@@ -69,7 +69,7 @@ When('eu envio uma requisição PUT para {string} com o ID {int} e os dados atua
   }).as('updatedStockItemData');
 
   cy.get('@updatedStockItemData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint: `${endpoint}/${id}`,
       method: 'PUT',
       body,
@@ -78,7 +78,7 @@ When('eu envio uma requisição PUT para {string} com o ID {int} e os dados atua
 });
 
 When('eu envio uma requisição DELETE para {string} com o ID {int}', (endpoint, id) => {
-  cy.apiRequest({
+  cy.chamarApi({
     endpoint: `${endpoint}/${id}`,
     method: 'DELETE',
   }).as('apiResponse');

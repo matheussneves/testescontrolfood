@@ -34,7 +34,7 @@ Given('que eu tenho os dados atualizados do usuário', () => {
 
 When('eu envio uma requisição POST para {string} com os dados do usuário', (endpoint) => {
   cy.get('@validUserData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint,
       method: 'POST',
       body,
@@ -43,14 +43,14 @@ When('eu envio uma requisição POST para {string} com os dados do usuário', (e
 });
 
 When('eu envio uma requisição GET para {string}', (endpoint) => {
-  cy.apiRequest({
+  cy.chamarApi({
     endpoint,
     method: 'GET',
   }).as('apiResponse');
 });
 
 When('eu envio uma requisição GET para {string} com o ID {int}', (endpoint, id) => {
-  cy.apiRequest({
+  cy.chamarApi({
     endpoint: `${endpoint}/${id}`,
     method: 'GET',
   }).as('apiResponse');
@@ -58,7 +58,7 @@ When('eu envio uma requisição GET para {string} com o ID {int}', (endpoint, id
 
 When('eu envio uma requisição PUT para {string} com o ID {int} e os dados atualizados', (endpoint, id) => {
   cy.get('@updatedUserData').then((body) => {
-    cy.apiRequest({
+    cy.chamarApi({
       endpoint: `${endpoint}/${id}`,
       method: 'PUT',
       body,
@@ -67,7 +67,7 @@ When('eu envio uma requisição PUT para {string} com o ID {int} e os dados atua
 });
 
 When('eu envio uma requisição DELETE para {string} com o ID {int}', (endpoint, id) => {
-  cy.apiRequest({
+  cy.chamarApi({
     endpoint: `${endpoint}/${id}`,
     method: 'DELETE',
   }).as('apiResponse');

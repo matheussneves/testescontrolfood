@@ -1,0 +1,428 @@
+[
+  {
+    "description": "  Como um administrador\n  Quero gerenciar os clientes do sistema\n  Para criar, atualizar, visualizar e remover clientes",
+    "keyword": "Feature",
+    "name": "Gerenciamento de Clientes",
+    "line": 2,
+    "id": "gerenciamento-de-clientes",
+    "tags": [],
+    "uri": "APIClientes.feature",
+    "elements": [
+      {
+        "id": "gerenciamento-de-clientes;criar-um-novo-cliente",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Criar um novo cliente",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "que eu tenho os dados válidos de um novo cliente",
+            "result": {
+              "status": "undefined",
+              "duration": 23000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "eu envio uma requisição POST para \"/clientes\" com os dados do cliente",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "eu devo receber um código de status 201",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "devo ver a mensagem \"Cliente criado com sucesso\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gerenciamento-de-clientes;criar-um-cliente-com-dados-inválidos",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Criar um cliente com dados inválidos",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "que eu tenho dados inválidos para o cliente",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "eu envio uma requisição POST para \"/clientes\" com os dados inválidos",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "eu devo receber um código de status 400",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "devo ver a mensagem \"Dados inválidos\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gerenciamento-de-clientes;listar-todos-os-clientes",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Listar todos os clientes",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "eu envio uma requisição GET para \"/clientes\"",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "eu devo receber um código de status 200",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "devo ver uma lista de clientes",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gerenciamento-de-clientes;listar-um-cliente-por-id",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Listar um cliente por ID",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "que existe um cliente com o ID 1",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "eu envio uma requisição GET para \"/clientes/1\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "eu devo receber um código de status 200",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "devo ver os detalhes do cliente",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gerenciamento-de-clientes;listar-um-cliente-inexistente-por-id",
+        "keyword": "Scenario",
+        "line": 30,
+        "name": "Listar um cliente inexistente por ID",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 31,
+            "name": "que não existe um cliente com o ID 999",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 32,
+            "name": "eu envio uma requisição GET para \"/clientes/999\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "eu devo receber um código de status 404",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "devo ver a mensagem \"Cliente não encontrado\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gerenciamento-de-clientes;atualizar-um-cliente-existente",
+        "keyword": "Scenario",
+        "line": 36,
+        "name": "Atualizar um cliente existente",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 37,
+            "name": "que existe um cliente com o ID 1",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "eu tenho os dados atualizados do cliente",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "eu envio uma requisição PUT para \"/clientes/1\" com os dados atualizados",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 40,
+            "name": "eu devo receber um código de status 200",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "devo ver a mensagem \"Cliente atualizado com sucesso\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gerenciamento-de-clientes;atualizar-um-cliente-inexistente",
+        "keyword": "Scenario",
+        "line": 43,
+        "name": "Atualizar um cliente inexistente",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 44,
+            "name": "que não existe um cliente com o ID 999",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 45,
+            "name": "eu envio uma requisição PUT para \"/clientes/999\" com os dados atualizados",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 46,
+            "name": "eu devo receber um código de status 404",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "devo ver a mensagem \"Cliente não encontrado\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gerenciamento-de-clientes;remover-um-cliente-existente",
+        "keyword": "Scenario",
+        "line": 49,
+        "name": "Remover um cliente existente",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 50,
+            "name": "que existe um cliente com o ID 1",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 51,
+            "name": "eu envio uma requisição DELETE para \"/clientes/1\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 52,
+            "name": "eu devo receber um código de status 200",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "devo ver a mensagem \"Cliente removido com sucesso\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gerenciamento-de-clientes;remover-um-cliente-inexistente",
+        "keyword": "Scenario",
+        "line": 55,
+        "name": "Remover um cliente inexistente",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 56,
+            "name": "que não existe um cliente com o ID 999",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 57,
+            "name": "eu envio uma requisição DELETE para \"/clientes/999\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "eu devo receber um código de status 404",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "devo ver a mensagem \"Cliente não encontrado\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

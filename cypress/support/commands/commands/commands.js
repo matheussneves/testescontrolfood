@@ -23,7 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add('apiRequest', ({ endpoint, method, body = null, headers = {} }) => {
+Cypress.Commands.add('chamarApi', ({ endpoint, method, body = null, headers = {} }) => {
   return cy.request({
     url: Cypress.env('url_api') + endpoint,
     method: method,
