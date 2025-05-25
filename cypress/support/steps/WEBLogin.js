@@ -1,7 +1,7 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
+import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps';
 
 Given('que eu estou na página de login', () => {
-  cy.visit('/login');
+  cy.visit('/');
 });
 
 Given('eu preencho o campo {string} com {string}', (field, value) => {

@@ -4,12 +4,13 @@ Given('que eu estou na página de gestão de clientes', () => {
   cy.visit('/clientes');
 });
 
-Given('eu preencho o campo {string} com {string}', (field, value) => {
+And('eu preencho o campo {string} com {string}', (field, value) => {
   const fieldIds = {
     Nome: '#clientes-page-input-nome',
     Telefone: '#clientes-page-input-telefone',
     Endereco: '#clientes-page-input-endereco',
   };
+  cy.log(field, value)
   cy.get(fieldIds[field]).clear().type(value);
 });
 
