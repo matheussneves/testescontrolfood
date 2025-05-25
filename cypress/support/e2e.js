@@ -14,4 +14,21 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands/commands/commands'
+
+// import "./commands/commands/"; // Comandos customizados gerais
+
+// import "./commands/requests/"; // Comandos para requisições API
+
+// import "./commands/selectors/"; // Comandos para seletores
+
+
+
+beforeEach(() => {
+
+  cy.viewport('macbook-16'); // Define a resolução da tela como MacBook 16
+
+});
+ 
+// Configuração executada após cada teste
+
